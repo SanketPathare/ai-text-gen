@@ -79,7 +79,7 @@ export class AudioRecorder {
   }
   public start() {
     if (this.mediaRecorder) {
-      this.mediaRecorder.start(10000)
+      this.mediaRecorder.start(1000)
     } else {
     
       navigator.mediaDevices
@@ -109,13 +109,13 @@ export class AudioRecorder {
 
     this.mediaRecorder = mediaRecorder
 
-    // 创建音频源节点    const microphone = this.audioContext.createMediaStreamSource(stream)
+     const microphone = this.audioContext.createMediaStreamSource(stream)
 
     const analyser = this.audioContext.createAnalyser()
   
     analyser.fftSize = 256
   
-    microphone.connect(analyser)
+   microphone.connect(analyser)
 
     const finishRecord = async () => {
       const duration = Date.now() - this.startTime
@@ -149,29 +149,28 @@ export class AudioRecorder {
     let silenceTimer: any = null
     let rafID: number
 
-    // 辅助函数：从频谱数据计算音量
+
     const getVolumeFromFrequencyData = (frequencyData: Uint8Array, bufferLength: number) => {
       const sum = frequencyData.reduce((acc, value) => acc + value, 0)
       const average = sum / bufferLength
       return average
     }
 
-    // 开始实时分析音频流
     const processAudio = () => {
-      // 获取频谱数据
+     
       const bufferLength = analyser.frequencyBinCount
       const frequencyData = new Uint8Array(bufferLength)
       analyser.getByteFrequencyData(frequencyData)
 
-      // 计算音量
+
       const volume = getVolumeFromFrequencyData(frequencyData, bufferLength)
 
       if (volume > this.volumeThreshold) {
-        // 重置静音计时器
+
         clearTimeout(silenceTimer)
         silenceTimer = null
       } else {
-        // 声音低于阈值，判断为发言结束
+   
         if (!silenceTimer) {
           silenceTimer = setTimeout(() => {
             if (mediaRecorder.state === 'recording') {
@@ -184,13 +183,12 @@ export class AudioRecorder {
         }
       }
 
-      // 循环处理音频流
+      
       rafID = requestAnimationFrame(() => {
         processAudio()
       })
     }
 
-    // 开始处理音频流
     if (this.autoStop) {
       processAudio()
     }
