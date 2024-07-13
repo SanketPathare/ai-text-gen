@@ -586,7 +586,7 @@ export default function Home() {
           <MessageSquareText  className="h-10 w-10 max-sm:h-8 max-sm:w-8" />
           <div className="ml-3 font-bold leading-10 max-sm:leading-8">
             {/* {t('title')} */}
-              Talk With AI
+            Ask Me Anything !!
             </div>
         </div>
         <div className="flex items-center gap-1">
