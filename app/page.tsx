@@ -582,7 +582,7 @@ export default function Home() {
   return (
     <main className="mx-auto flex min-h-full max-w-screen-md flex-col justify-between pb-20 pt-6 max-sm:pb-16 max-sm:pt-0 landscape:max-md:pt-0">
       <div className="mb-2 mt-6 flex justify-between p-4 pr-2 max-sm:mt-2 max-sm:pr-2 landscape:max-md:mt-0">
-        <div className="flex flex-row text-xl leading-8 text-blue-400 max-sm:text-base">
+        <div className="flex flex-row text-xl leading-8 text-black dark:text-white t max-sm:text-base">
           <MessageSquareText  className="h-10 w-10 max-sm:h-8 max-sm:w-8" />
           <div className="ml-3 font-bold leading-10 max-sm:leading-8">
             {/* {t('title')} */}
@@ -641,7 +641,7 @@ export default function Home() {
                 {t('regenerateAnswer')}
               </span>
               <Separator orientation="vertical" /> */}
-              <span className="mx-2 cursor-pointer hover:text-slate-500" onClick={() => handleCleanMessage()}>
+              <span className="mx-2 cursor-pointer hover:text-slate-500 text-[1rem]"   onClick={() => handleCleanMessage()}>
                 {t('clearChatContent')}
               </span>
             </div>
