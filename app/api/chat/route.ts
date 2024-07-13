@@ -21,7 +21,7 @@ type GeminiRequest = {
 export const runtime = 'edge'
 export const preferredRegion = ['cle1', 'iad1', 'pdx1', 'sfo1', 'sin1', 'syd1', 'hnd1', 'kix1']
 
-const geminiApiKey = process.env.GEMINI_API_KEY as string
+const geminiApiKey = "AIzaSyD6Q1uqAxaxVMSwlVu2ydQxUg28YLWY2PQ"as string
 const geminiApiBaseUrl = process.env.GEMINI_API_BASE_URL as string
 
 export async function POST(req: NextRequest) {
