@@ -17,7 +17,7 @@ const APP_NAME = 'Talk with AI'
 const APP_DEFAULT_TITLE = 'Talk with AI'
 const APP_TITLE_TEMPLATE = '%s - PWA App'
 const APP_DESCRIPTION =
-  'Deploy your private Gemini application for free with one click, supporting Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Pro and Gemini Pro Vision models.Gemini 1.5 Pro、Gemini 1.5 Flash、Gemini Pro 和 Gemini Pro Vision'
+  'Deploy your private Gemini application for free with one click, supporting Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Pro and Gemini Pro Vision models.Gemini 1.5 Pro、Gemini 1.5 Flash、Gemini Pro Gemini Pro Vision'
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
